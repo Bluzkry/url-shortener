@@ -1,0 +1,23 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "This shortens a URL.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Bluzkry/url-shortener.git"
+  },
+  "keywords": [
+    "URL",
+    "shortener"
+  ],
+  "author": "Alexander Zou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bluzkry/url-shortener/issues"
+  },
+  "homepage": "https://github.com/Bluzkry/url-shortener#readme"
+}
