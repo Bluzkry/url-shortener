@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import logger from "morgan";
 
 import indexRouter from "./routes/index";
+import redirectRouter from "./routes/redirect";
 import shortenRouter from "./routes/shorten";
 import { errorHandler } from "./middleware/errors";
 
@@ -18,6 +19,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/shorten", shortenRouter);
+app.use("/:hash", redirectRouter);
 
 app.use((req, res, next) => {
   next(createError(404));
