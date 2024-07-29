@@ -7,11 +7,10 @@ import { Shorten } from "./components/Shorten";
 import "./App.css";
 
 function App() {
-  const mockShortenedUrl = "http://localhost:8080/a1b2c3d4";
   const [shortenedUrl, setShortenedUrl] = useState<string>("");
 
   const shortenUrl = (url: string) => {
-    setShortenedUrl(mockShortenedUrl);
+    setShortenedUrl(url);
   };
 
   return (
