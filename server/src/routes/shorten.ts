@@ -7,7 +7,7 @@ import { localCache } from "../db/localCache";
 const router = express.Router();
 
 router.post("/", (req, res) => {
-  const url = "https://www.google.com/?client=safari";
+  const { url } = req.body;
   let hash;
 
   if (localCache.urlToHash[url]) {
