@@ -38,3 +38,7 @@ yarn start
 ```
 
 4. The local version of "url-shortener" should start at `http://localhost:3000/`.
+
+If things work correctly, you will see something like the below.
+
+![snapshot](/client/public/snapshot.png)

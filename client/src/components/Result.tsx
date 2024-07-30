@@ -11,6 +11,8 @@ export const Result: React.FC<{ url: string }> = ({ url }) => (
 );
 
 const Main = styled(Container)`
+  position: relative;
+  z-index: 1;
   max-width: 22rem;
   padding: 0.5rem 1.5rem;
   background-color: whitesmoke;

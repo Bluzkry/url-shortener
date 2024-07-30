@@ -48,6 +48,8 @@ export const Shorten: React.FC<Props> = ({ shortenUrl }) => {
 };
 
 const Main = styled(Container)`
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
   padding: 2rem;
