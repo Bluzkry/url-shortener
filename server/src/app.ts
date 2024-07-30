@@ -5,11 +5,13 @@ import path from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
 
+import { connectDB } from "./db/db";
 import indexRouter from "./routes/index";
 import redirectRouter from "./routes/redirect";
 import shortenRouter from "./routes/shorten";
 import { errorHandler } from "./middleware/errors";
 
+connectDB();
 const app = express();
 
 app.use(logger("dev"));
