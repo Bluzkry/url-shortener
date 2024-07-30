@@ -1,16 +1,19 @@
 import express, { Request } from "express";
 
-import { localCache } from "../db/localCache";
+import { findHash } from "../db/repositories/hashUrl.repository";
 
 const router = express.Router({ mergeParams: true });
 
-router.get("/", (req: Request, res) => {
-  const redirectUrl = localCache.hashToUrl[req.params.hash];
+router.get("/", async (req: Request, res) => {
+  try {
+    const redirectUrl = (await findHash(req.params.hash))?.url;
 
-  if (redirectUrl) {
-    res.redirect(redirectUrl);
-  } else {
-    res.status(500).send("Sorry, that URL does not exist.");
+    redirectUrl
+      ? res.redirect(redirectUrl)
+      : res.status(500).send("Sorry, that URL does not exist.");
+  } catch (e) {
+    console.error(e);
+    res.status(500).send(`Server error: ${e}`);
   }
 });
 

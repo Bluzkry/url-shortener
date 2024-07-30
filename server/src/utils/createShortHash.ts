@@ -1,17 +1,16 @@
 import { createHash, randomBytes } from "crypto";
 
-import { localCache } from "../db/localCache";
+import { findHash, saveHash } from "../db/repositories/hashUrl.repository";
 
-const updateHashIfCollision = ({
+const updateHashIfCollision = async ({
   url,
   hash,
 }: {
   url: string;
   hash: string;
-}): string => {
-  if (!localCache.hashToUrl[hash]) {
-    localCache.hashToUrl[hash] = url;
-    localCache.urlToHash[url] = hash;
+}): Promise<string> => {
+  if (!(await findHash(hash))) {
+    await saveHash({ url, hash });
     return hash;
   }
 
@@ -19,7 +18,7 @@ const updateHashIfCollision = ({
   return updateHashIfCollision({ url, hash: newHash });
 };
 
-export const createShortHash = (url: string) => {
+export const createShortHash = async (url: string) => {
   const hash = createHash("sha256").update(url).digest("hex").slice(0, 8);
-  return updateHashIfCollision({ url, hash });
+  return await updateHashIfCollision({ url, hash });
 };
