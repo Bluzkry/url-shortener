@@ -2,6 +2,8 @@
 
 This is a URL shortener.
 
+You can find a deployed version here: https://url-shortener-nh88.onrender.com/. (Note that you have to _wait 90 seconds_ for the instance to spin-up.)
+
 ![snapshot](/client/public/snapshot.png)
 
 Here's how to run this project locally.

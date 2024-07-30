@@ -7,7 +7,8 @@
     "build": "rm -rf dist && npx tsc",
     "start": "node dist/app.js",
     "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/app.ts",
-    "test": "npm test"
+    "test": "npm test",
+    "deploy": "npm i && npm run build && cd ../client && yarn && yarn run build"
   },
   "repository": {
     "type": "git",
