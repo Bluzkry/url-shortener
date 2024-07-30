@@ -41,7 +41,7 @@ function App() {
   );
 }
 
-const Body = styled.body`
+const Body = styled.div`
   div + div {
     margin-top: 2em;
   }
