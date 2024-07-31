@@ -68,3 +68,47 @@ yarn start
 ```
 
 7. The local version of "url-shortener" should start at `http://localhost:3000/`.
+
+### Tests
+
+"url-shortener" contains client-side and server-side tests.
+
+##### Server-Side
+
+To run server-side tests, open a window in the command-line interface (CLI) and go to the root folder of the project. Then do the following.
+
+```
+cd server
+npm test
+```
+
+##### Client-Side
+
+To run client-side tests, open a window in the command-line interface (CLI) and go to the root folder of the project. Then do the following.
+
+```
+cd client
+yarn test
+```
+
+### Tests
+
+"url-shortener" contains client-side and server-side tests.
+
+##### Server-Side
+
+To run server-side tests, open a window in the command-line interface (CLI) and go to the root folder of the project. Then do the following.
+
+```
+cd server
+npm test
+```
+
+##### Client-Side
+
+To run client-side tests, open a window in the command-line interface (CLI) and go to the root folder of the project. Then do the following.
+
+```
+cd client
+yarn test
+```
